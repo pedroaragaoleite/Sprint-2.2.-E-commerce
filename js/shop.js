@@ -102,11 +102,13 @@ function printCart() {
 function removeFromCart(id) {
     // check for the id index in the cart array of objs / will return -1 the item doesnt exist or will return the index
     const findIndex = cart.findIndex(product => product.id === id);
+    console.log(findIndex);
+    // console.log(cart[findIndex]);
 
     // if the product quantity its equal to 1 will remove it from the array
     // i call the printCart() to update the prices
     if (cart[findIndex].quantity === 1) {
-        cart.splice(cart[findIndex], 1);
+        cart.splice(findIndex, 1);
         count.innerHTML--;
         // printCart();
 
